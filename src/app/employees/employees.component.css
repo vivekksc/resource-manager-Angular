@@ -6,9 +6,8 @@
   width: 15em;
 }
 .employees li {
-  cursor: pointer;
   position: relative;
-  left: 0;
+  cursor: pointer;
   background-color: #EEE;
   margin: .5em;
   padding: .3em 0;
@@ -20,14 +19,26 @@
   background-color: #DDD;
   left: .1em;
 }
-.employees li.selected {
+/* .employees li.selected {
   background-color: #CFD8DC;
   color: #405061;
 }
 .employees li.selected:hover {
   background-color: #BBD8DC;
   color: #405061;
+} */
+.employees a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
 }
+
+.employees a:hover {
+  color:#607D8B;
+}
+
 .employees .badge {
   display: inline-block;
   font-size: small;
@@ -39,6 +50,8 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
