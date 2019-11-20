@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../employees/employee';
 import { EmployeeService } from '../SERVICES/employee.service';
+import { MessageService } from '../SERVICES/message.service';
+import { AdalService } from 'adal-angular4';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +12,15 @@ import { EmployeeService } from '../SERVICES/employee.service';
 export class DashboardComponent implements OnInit {
   employees: Employee[] = [];
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(
+    private adalService: AdalService,
+    private employeeService: EmployeeService,
+    private messageService: MessageService
+  ) { }
 
   ngOnInit() {
+    this.adalService.handleWindowCallback();
+    this.messageService.clear();
     this.getEmployees();
   }
 

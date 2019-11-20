@@ -1,0 +1,9 @@
+<h5>Create Employee</h5>
+<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+<div>
+	<input name="name" [(ngModel)]="employee.name" placeholder="" />
+</div>
+<div>
+	<button type="submit">Save</button>
+</div>
+</form>

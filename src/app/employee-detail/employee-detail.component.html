@@ -1,8 +1,15 @@
-<div *ngIf="employee">
-  <h5>{{employee.name | uppercase}} Details</h5>
-  <div><span>Id: </span>{{employee.id}}</div>
-  <label>
-    <input [(ngModel)]="employee.name" placeholder="" />
-  </label>
-</div>
+<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+	<div *ngIf="employee">
+    <div>
+      <h5>{{employee.name | uppercase}} Details</h5>
+      <div><span>Id: </span>{{employee.id}}</div>
+    </div>
+		<div>
+			<input name="name" [(ngModel)]="employee.name" placeholder="" />
+    </div>
+    <div>
+      <button type="submit">Save</button>
+    </div>
+  </div>
+</form>
 <button (click)="goBack()">Go back</button>
